@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+	<head> 
+		<title>Usuário</title>
+	</head>
+	
+	<body>
+		<form onsubmit="return validar();" method="POST" action="salvar_usuario.php"> 	
+			<fieldset>
+				<legend><b> Usuário </b></legend>
+				<label for="nome">Nome</label>
+				<input type="text" id="nome" name="nome"/>
+				<br />
+				<label for="login">Login</label>
+				<input type="text" id="login" name="login"/>
+				<br />
+				<label for="senha">Senha</label>
+				<input type="password" id="senha" name="senha"/>
+				<br />
+				<label for="nivel">Nivel</nivel>
+				<select id="nivel" name="nivel">
+					<option value="1">Desenvolvedor</option>
+					<option value="2">Administrador</option>
+					<option value="3">Colaborador</option>
+				</select>	
+				<br />
+				<input type="submit"  value="Salvar" />
+				
+			</fieldset>
+		</form>
+		
+		<script type="text/javascript">
+			
+			function validar() {
+				var nome = document.getElementById("nome");
+				var login = document.getElementById("login");
+				var senha = document.getElementById("senha");
+				var nivel = document.getElementById("nivel");
+
+				if (nome.value == "") {
+				nome.style.backgroundColor = "#FF8C00";
+				nome.style.color = "#FFF";
+				nome.focus();
+				return false;
+				}
+
+				if (login.value == "") {
+					login.style.backgroundColor = "#FF8C00";
+					login.style.color = "#FFF";
+					login.focus();
+					return false;
+				}
+
+				if (senha.value == "") {
+					senha.style.backgroundColor = "#FF8C00";
+					senha.style.color = "#FFF";
+					senha.focus();
+					return false;
+				}
+				return true;
+			}
+
+		</script>
+	</body>
+</html>
